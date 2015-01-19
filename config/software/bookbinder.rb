@@ -11,6 +11,11 @@ dependency "sqlite3"   # have omnibus bundle sqlite3 native libs
 
 build do
   env = with_standard_compiler_flags(with_embedded_path)
-  bundle "install --binstubs"
+  bundle "install"
   copy("#{Omnibus::Config.project_root}/bookbinder-scripts/*", "#{install_dir}/bin")
+#  copy("#{Omnibus::Config.project_root}/bookbinder-scripts/Gemfile*", "#{install_dir}/bin")
+#  erb source: 'bookbinder.erb',
+#      dest:   "#{install_dir}/bin",
+#      vars:   { install_dir: "#{install_dir}" },
+#      mode:   '0755'
 end
