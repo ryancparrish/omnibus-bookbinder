@@ -9,7 +9,7 @@ maintainer "Pivotal and the Cloud Foundry Community"
 homepage "https://github.com/cloudfoundry-incubator/bookbinder"
 
 build_iteration 1
-build_version "1.0.0"
+build_version "1.0.1"
 
 dependency "preparation"
 dependency "bookbinder"
@@ -28,4 +28,4 @@ else
   install_dir "#{default_root}/#{name}"
 end
 
-compress :dmg
+#compress :dmg
