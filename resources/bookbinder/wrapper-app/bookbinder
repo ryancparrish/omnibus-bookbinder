@@ -1,12 +1,16 @@
-#!/opt/bookbinder/embedded/bin/ruby
-#
-# Adapted from a bunder-generated script
-#
+#!/bin/sh
+INSTALL_PATH=/opt/bookbinder
+GEM_PATH=$INSTALL_PATH/embedded/lib/ruby/gems/2.1.0
+PATH=$INSTALL_PATH/embedded/bin:$PATH
+RUBY=$INSTALL_PATH/embedded/bin/ruby
 
-require 'pathname'
-ENV['BUNDLE_GEMFILE'] ||= File.expand_path("../Gemfile", Pathname.new(__FILE__).realpath)
 
-require 'rubygems'
-require 'bundler/setup'
+if [ $1 = "stage" ]; then
+  
+  cd final_app && $RUBY app.rb
 
-load Gem.bin_path('bookbindery', 'bookbinder')
+else 
+ 
+  $RUBY $INSTALL_PATH/bin/bookbinder-wrapper.rb "$@"
+
+fi

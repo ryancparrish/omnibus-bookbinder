@@ -1,0 +1,3 @@
+# Placeholder for actual script
+#
+# Perhaps needed to ensure that git is installed and on path, since git is a dependency of bookbinder.
