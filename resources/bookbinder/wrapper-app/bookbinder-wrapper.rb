@@ -15,7 +15,7 @@ def run_bookbinder
   # when bookbinder is verifying connectivity to external resources
   # (e.g. css links).  Tried updating embedded openssl, but verification
   # still failed with latest cacert.pem.
-  OpenSSL::SSL.const_set(:VERIFY_PEER, OpenSSL::SSL::VERIFY_NONE)
+  silence_warnings { OpenSSL::SSL.const_set(:VERIFY_PEER, OpenSSL::SSL::VERIFY_NONE) } 
 
   return_code = Bookbinder::Cli.new.run ARGV
   exit return_code.to_i
