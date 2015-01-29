@@ -19,13 +19,17 @@ override :ruby, version: "2.1.1"
 override :nokogiri, version: "1.6.5"
 
 if windows?
-  # NOTE: Ruby DevKit fundamentally CANNOT be installed into "Program Files"
+  # NOTE (from omnibus-chef):
+  #       Ruby DevKit fundamentally CANNOT be installed into "Program Files"
   #       Native gems will use gcc which will barf on files with spaces,
   #       which is only fixable if everyone in the world fixes their Makefiles
-  install_dir  "#{default_root}/cloudfoundry/#{name}"
+  #
+  # Choosing C:/tools as install_dir to coincide with ruby-related
+  # chocolatey.org packages.
+  install_dir  "C:/tools/#{name}"
   package_name "bookbinder"
 else
-  install_dir "#{default_root}/#{name}"
+  install_dir "/usr/local/opt/#{name}"
 end
 
 #compress :dmg

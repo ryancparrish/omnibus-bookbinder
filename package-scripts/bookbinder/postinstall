@@ -1,3 +1,6 @@
-# Placeholder for actual script
-#
-# Perhaps needed to modify permissions, add newly installed bins to path.
+#!/bin/sh
+
+INSTALL_PATH=/usr/local/opt/bookbinder
+
+chmod a+x $INSTALL_PATH/bin/*
+ln -sf $INSTALL_PATH/bin/bookbinder /usr/local/bin/bookbinder

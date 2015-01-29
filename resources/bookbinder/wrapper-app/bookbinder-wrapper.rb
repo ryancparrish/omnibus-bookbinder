@@ -1,8 +1,8 @@
 require 'bookbinder'
 require 'optparse'
 
-# The `bookbinder --version` command only works if running a locally bundled gem,
-# not if the gem was installed via rubygems.
+# The `bookbinder --version` command only works if running a locally bundled
+# bookbinder project, not if the gem was installed via rubygems.
 # For this reason, we're intercepting the version command and reporting the gem
 # version.
 def print_version

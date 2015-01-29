@@ -45,4 +45,4 @@ suites:
         build_user:          vagrant
         build_user_group:    vagrant
         build_user_password: vagrant
-        install_dir:         /opt/bookbinder
+        install_dir:         /usr/local/opt/bookbinder

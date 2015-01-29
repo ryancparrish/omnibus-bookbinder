@@ -1,16 +1,17 @@
 #!/bin/sh
-INSTALL_PATH=/opt/bookbinder
+INSTALL_PATH=/usr/local/opt/bookbinder
+
 GEM_PATH=$INSTALL_PATH/embedded/lib/ruby/gems/2.1.0
 PATH=$INSTALL_PATH/embedded/bin:$PATH
 RUBY=$INSTALL_PATH/embedded/bin/ruby
 
 
 if [ $1 = "stage" ]; then
-  
+
   cd final_app && $RUBY app.rb
 
-else 
- 
+else
+
   $RUBY $INSTALL_PATH/bin/bookbinder-wrapper.rb "$@"
 
 fi

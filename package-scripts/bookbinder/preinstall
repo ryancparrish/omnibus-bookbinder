@@ -1,3 +1,7 @@
-# Placeholder for actual script
-#
-# Perhaps needed to ensure that git is installed and on path, since git is a dependency of bookbinder.
+#!/bin/sh
+
+if `git --version` ; then
+  exit 0
+else
+  exit 1
+fi
